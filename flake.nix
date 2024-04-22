@@ -31,6 +31,9 @@
               modules = [
                 {
                   # https://devenv.sh/reference/options/
+                  packages = [
+                    pkgs.nodePackages.typescript-language-server
+                  ];
                   languages.javascript = {
                     enable = true;
                     npm = {
