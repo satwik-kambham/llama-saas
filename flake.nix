@@ -31,6 +31,12 @@
               modules = [
                 {
                   # https://devenv.sh/reference/options/
+                  languages.javascript = {
+                    enable = true;
+                    npm = {
+                      enable = true;
+                    };
+                  };
                 }
               ];
             };
