@@ -33,12 +33,16 @@
                   # https://devenv.sh/reference/options/
                   packages = [
                     pkgs.nodePackages.typescript-language-server
+                    pkgs.ollama
                   ];
                   languages.javascript = {
                     enable = true;
                     npm = {
                       enable = true;
                     };
+                  };
+                  processes = {
+                    ollama.exec = "ollama serve";
                   };
                 }
               ];
