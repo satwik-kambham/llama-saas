@@ -11,9 +11,11 @@ export default function Home() {
             Llama
           </Link>
           <div className="grow"></div>
-          <Button size="2" variant="soft" color="ruby">
-            Login / Sign Up
-          </Button>
+          <NextLink href="/auth">
+            <Button size="2" variant="soft" color="ruby">
+              Login / Sign Up
+            </Button>
+          </NextLink>
         </nav>
         <Separator size="4" />
       </header>
@@ -22,12 +24,12 @@ export default function Home() {
           <div className="flex flex-col justify-center items-center">
             <Text size="9" weight="bold" align="center" wrap="pretty" className="bg-gradient-to-r from-purple-500 to-red-600 text-4xl font-bold p-4 bg-clip-text text-transparent">Llama SAAS</Text>
             <Text size="6" wrap="balance" align="center" className="p-8">Empowering AI-driven learning with intelligent conversation and personalized assistance</Text>
-	    <NextLink href="/generate">
-	      <Button size="3" color="ruby">
-		Get Started
-		<ArrowRightIcon />
-	      </Button>
-	    </NextLink>
+            <NextLink href="/auth">
+              <Button size="3" color="ruby">
+                Get Started
+                <ArrowRightIcon />
+              </Button>
+            </NextLink>
           </div>
         </Section>
       </Container>

@@ -1,4 +1,4 @@
-import { Box, Link, Button, Separator } from "@radix-ui/themes";
+import { Box, Text, Button, Separator } from "@radix-ui/themes";
 import NextLink from "next/link";
 
 export default function Header() {
@@ -6,19 +6,20 @@ export default function Header() {
     <Box>
       <header>
         <nav className="flex p-4">
-          <Link size="6" weight="bold" color="ruby">
-            <NextLink href="/">
+          <NextLink href="/">
+            <Text size="6" weight="bold" color="ruby">
               Llama
-            </NextLink>
-          </Link>
+            </Text>
+          </NextLink>
           <div className="grow"></div>
-          <Button size="2" variant="soft" color="ruby">
-            Logout
-          </Button>
+          <NextLink href="/">
+            <Button size="2" variant="soft" color="ruby">
+              Logout
+            </Button>
+          </NextLink>
         </nav>
         <Separator size="4" />
       </header>
     </Box>
   )
 }
-

@@ -34,15 +34,35 @@
                   packages = [
                     pkgs.nodePackages.typescript-language-server
                     pkgs.ollama
+                    pkgs.prisma-engines
+                    pkgs.openssl
                   ];
+
                   languages.javascript = {
                     enable = true;
                     npm = {
                       enable = true;
                     };
                   };
+
                   processes = {
                     ollama.exec = "ollama serve";
+                  };
+
+                  services.postgres = {
+                    enable = true;
+                    initialDatabases = [
+                      { name = "llamasaasdb"; }
+                    ];
+                  };
+
+                  env = {
+                    PRISMA_QUERY_ENGINE_LIBRARY = "${pkgs.prisma-engines}/lib/libquery_engine.node";
+                    PRISMA_QUERY_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/query-engine";
+                    PRISMA_SCHEMA_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/schema-engine";
+                    PRISMA_INTROSPECTION_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/introspection-engine";
+                    PRISMA_MIGRATION_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/schema-engine";
+                    PRISMA_FMT_BINARY = "${pkgs.prisma-engines}/bin/prisma-fmt";
                   };
                 }
               ];
