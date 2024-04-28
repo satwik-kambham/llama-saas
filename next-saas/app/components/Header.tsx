@@ -12,7 +12,7 @@ export default function Header() {
             </Text>
           </NextLink>
           <div className="grow"></div>
-          <NextLink href="/">
+          <NextLink href="/api/auth/logout">
             <Button size="2" variant="soft" color="ruby">
               Logout
             </Button>
