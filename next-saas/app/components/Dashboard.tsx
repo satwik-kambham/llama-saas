@@ -44,7 +44,7 @@ export default function Dashboard() {
         <Flex gap="2">
           {parseMethods(path.methods.split(","))}
         </Flex>
-        <Text>{path.path}</Text>
+        <Text className="whitespace-pre-wrap">{path.path}</Text>
       </Flex>
     </Card>
   ));
