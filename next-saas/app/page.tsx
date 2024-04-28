@@ -3,8 +3,8 @@ import Landing from "./components/Landing";
 import Dashboard from "./components/Dashboard";
 
 export default async function Home() {
-  const { user } = await getSession();
+  const sessionInfo = await getSession();
 
-  if (user) return <Dashboard />;
+  if (sessionInfo?.user) return <Dashboard />;
   return <Landing />;
 }

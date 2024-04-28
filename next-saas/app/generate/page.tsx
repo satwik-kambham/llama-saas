@@ -6,6 +6,7 @@ import { Box, Container, Text, IconButton, ScrollArea, Section, TextField, Card,
 import Header from "../components/Header";
 import { ArrowLeftIcon, PaperPlaneIcon, Pencil2Icon, TextAlignLeftIcon } from "@radix-ui/react-icons";
 import { useUser } from "@auth0/nextjs-auth0/client";
+import { useRouter } from "next/navigation";
 
 async function generateResponse(prompt: string) {
   const url = "http://localhost:11434/api/generate";
@@ -29,6 +30,7 @@ export default function Generate() {
   const { user, error, isLoading } = useUser();
   const [response, setResponse] = useState("");
   const [prompt, setPrompt] = useState("");
+  const router = useRouter();
 
   async function infer() {
     setResponse("");
@@ -45,6 +47,9 @@ export default function Generate() {
   }
 
   if (error) return <div>{error.message}</div>;
+  if (!isLoading && !user) {
+    router.push("/");
+  }
 
   return (
     <Box>
