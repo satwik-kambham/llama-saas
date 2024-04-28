@@ -54,6 +54,7 @@
                     initialDatabases = [
                       { name = "llamasaasdb"; }
                     ];
+                    listen_addresses = "127.0.0.1";
                   };
 
                   env = {
