@@ -8,7 +8,7 @@ export default function Landing() {
       <header>
         <nav className="flex p-4">
           <Link href="#" size="6" weight="bold" color="ruby">
-            Llama
+            Zenith
           </Link>
           <div className="grow"></div>
           <NextLink href="/api/auth/login">
@@ -22,7 +22,7 @@ export default function Landing() {
       <Container px="4">
         <Section pt="8" size="1">
           <div className="flex flex-col justify-center items-center">
-            <Text size="9" weight="bold" align="center" wrap="pretty" className="bg-gradient-to-r from-purple-500 to-red-600 text-4xl font-bold p-4 bg-clip-text text-transparent">Llama SAAS</Text>
+            <Text size="9" weight="bold" align="center" wrap="pretty" className="bg-gradient-to-r from-purple-500 to-red-600 text-4xl font-bold p-4 bg-clip-text text-transparent">Zenith</Text>
             <Text size="6" wrap="balance" align="center" className="p-8">Empowering AI-driven learning with intelligent conversation and personalized assistance</Text>
             <NextLink href="/api/auth/login">
               <Button size="3" color="ruby">

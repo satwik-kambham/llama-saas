@@ -8,7 +8,7 @@ export default function Header() {
         <nav className="flex p-4">
           <NextLink href="/">
             <Text size="6" weight="bold" color="ruby">
-              Llama
+              Zenith
             </Text>
           </NextLink>
           <div className="grow"></div>

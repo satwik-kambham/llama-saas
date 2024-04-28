@@ -47,7 +47,7 @@
 
                   processes = {
                     ollama.exec = "ollama serve";
-                    nextjs.exec = "npm run --prefix ./next-saas dev";
+                    nextjs.exec = "npm install --prefix ./next-saas; npm run --prefix ./next-saas dev";
                   };
 
                   services.postgres = {
