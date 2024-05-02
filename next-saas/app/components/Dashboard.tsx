@@ -7,6 +7,16 @@ import { useUser } from "@auth0/nextjs-auth0/client";
 import paths from "../../state";
 import { useRouter } from "next/navigation";
 
+async function getPaths() {
+  const res = await fetch("/api/db", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  console.log(res);
+}
+
 function parseLevel(levelId: string) {
   if (levelId === "1") return "Beginner";
   if (levelId === "2") return "Intermediate";
@@ -23,7 +33,7 @@ function parseMethods(methodIds: string[]) {
   if (methodIds.includes("4")) methods.push("Websites");
 
   return methods.map((method, index) => (
-      <Badge key={index} color="grass">{method}</Badge>
+    <Badge key={index} color="grass">{method}</Badge>
   ));
 }
 
@@ -57,6 +67,7 @@ export default function Dashboard() {
           <NextLink href="/generate">
             <Button size="2" color="ruby">Generate</Button>
           </NextLink>
+          <Button size="2" color="ruby" onClick={getPaths}>Get Paths</Button>
           <Section>
             <Grid columns="3" gap="3" width="auto">
               {pathComponents}
